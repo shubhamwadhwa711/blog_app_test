@@ -9,7 +9,7 @@ from apps.blog import models
 class WriterModelAdmin(UserAdmin):
     fieldsets = (
         (None, {'fields': ('password',)}),
-        (_('Personal info'), {'fields': ('first_name', 'last_name', 'email', 'is_editor')}),
+        (_('Personal info'), {'fields': ('first_name', 'last_name', 'username', 'email', 'is_editor')}),
         (_('Permissions'), {
             'fields': ('is_active', 'is_staff', 'is_superuser',
                        'groups', 'user_permissions'),
@@ -19,7 +19,7 @@ class WriterModelAdmin(UserAdmin):
     add_fieldsets = (
         (None, {
             'classes': ('wide',),
-            'fields': ('email', 'password1', 'password2'),
+            'fields': ('username', 'password1', 'password2'),
         }),
     )
     add_form = UserCreationForm
